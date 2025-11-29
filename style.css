@@ -1,0 +1,270 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f4f4;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header - FLEXBOX */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background-color: #2c3e50;
+  color: white;
+  position: sticky;
+  top: 0;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.3s;
+}
+
+.nav a:hover {
+  color: #3498db;
+}
+
+/* Hero Section - FLEXBOX */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 90vh;
+  padding: 4rem 5%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.hero-content {
+  flex: 1;
+  padding-right: 2rem;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.role {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffd700;
+  animation: colorchange 2s infinite;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #e74c3c;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 700;
+  transition: all 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #c0392b;
+  transform: scale(1.05);
+}
+
+.hero-image {
+  flex: 1;
+  text-align: center;
+}
+
+.hero-image img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 5px solid white;
+  animation: bounce 3s infinite;
+}
+
+/* Sections */
+.about-section, .skills-section, .projects-section, .contact-section {
+  padding: 4rem 0;
+}
+
+.container h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #2c3e50;
+}
+
+/* Skills - CSS GRID */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.skill-card {
+  background: white;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  transition: transform 0.3s;
+}
+
+.skill-card:hover {
+  transform: translateY(-10px);
+}
+
+/* Projects - CSS GRID */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: all 0.3s;
+}
+
+.project-card h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Contact Form - FLEXBOX */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+/* Footer */
+.footer {
+  background-color: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+/* ANIMATIONS */
+@keyframes colorchange {
+  0% { color: #ffd700; }
+  50% { color: #ff6b6b; }
+  100% { color: #ffd700; }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+
+/* MEDIA QUERIES - RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 5%;
+  }
+  
+  .nav {
+    gap: 1rem;
+  }
+  
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 5%;
+  }
+  
+  .hero-content {
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .skills-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+  
+  .container {
+    padding: 0 15px;
+  }
+}
